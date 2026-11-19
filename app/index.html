@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">Every trophy, its official description, a guide in plain words with its source, and a tracker that remembers where you are. Works offline — no network, no account, nothing leaves your browser.</p>
+    <div class="progress-wrap" aria-label="Overall progress">
+      <div class="progress-line"><span id="progress-text">0 of 55 earned</span><span id="progress-pct">0%</span></div>
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width: 0%"></div></div>
+      <div class="grade-chips" id="grade-chips"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum</h2>
+    <p class="section-note">One playthrough is enough. There is no mission replay and no difficulty setting, but free-roam carries on after the story, so almost everything can be finished after the credits. PowerPyx puts the whole run at about 200 hours.</p>
+    <div class="stage-grid" id="stage-grid"></div>
+    <aside class="missable-callout" id="missable-callout">
+      <h3>Watch out: one trophy can be missed</h3>
+      <p><strong>Positive Mental Attitude</strong> (meditate at every spot across Leonida) is the only trophy the guides flag as potentially missable. The first meditation is offered at Jason&rsquo;s house in Chapter 1, and that spot becomes permanently unavailable after the chapter ends. Meditate there the first time the game offers it, and keep a save from early Chapter 1. Source: <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</a>.</p>
+      <p class="callout-sub">Cheats disable trophies and saving, so keep them off until the platinum pops.</p>
+    </aside>
+  </section>
+
+  <section class="controls" aria-label="Filters and progress tools">
+    <div class="control-row">
+      <label class="search-label">Search
+        <input id="search" type="search" placeholder="Trophy, mission, activity…" autocomplete="off">
+      </label>
+      <label>Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort">
+          <option value="roadmap">Roadmap order</option>
+          <option value="name">Name A–Z</option>
+          <option value="grade">Grade, then name</option>
+        </select>
+      </label>
+    </div>
+    <div class="control-row">
+      <div class="kind-buttons" id="kind-buttons" role="group" aria-label="Filter by kind"></div>
+    </div>
+    <div class="control-row">
+      <label class="check-label"><input id="only-missable" type="checkbox"> Missable only</label>
+      <label class="check-label"><input id="only-missing" type="checkbox"> Missing only</label>
+      <label class="check-label"><input id="spoilers" type="checkbox"> Hide story spoilers</label>
+      <span class="spacer"></span>
+      <button id="export" type="button">Export progress</button>
+      <label class="import-button">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+      <button id="reset" type="button" class="danger">Reset</button>
+    </div>
+    <p class="control-note" id="result-count" aria-live="polite"></p>
+  </section>
+
+  <section class="list" id="list" aria-label="Trophy checklist"></section>
+
+  <section class="sources" aria-label="Sources">
+    <h2>Where the facts come from</h2>
+    <p>Names, descriptions and grades are the official list as published on PlayStation, mirrored by Exophase and PSNProfiles. The guides are written for this entry, in the author&rsquo;s own words; each trophy&rsquo;s guide names the source its facts come from, and nothing is copied from another guide. The full source list:</p>
+    <ul id="source-list"></ul>
+    <p class="offline-note">This guide is a set of static files. It loads nothing over the network — the only thing it fetches is its own <code>data/trophies.json</code>. Your checklist lives in your browser&rsquo;s local storage; export it to keep a copy.</p>
+  </section>
+</main>
+
+<footer class="colophon">
+  <p>An unofficial fan guide. Grand Theft Auto, GTA and Leonida are trademarks of their owners; this guide is not affiliated with or endorsed by Rockstar Games or Sony Interactive Entertainment. No official artwork, logo or screenshot is used.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

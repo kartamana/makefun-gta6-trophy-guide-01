@@ -1,0 +1,298 @@
+/* Leonida Trophy Guide — own look, no artwork, no external files. */
+
+:root {
+  --bg: #14101d;
+  --bg-soft: #1d1829;
+  --card: #221c33;
+  --card-earned: #1c2b22;
+  --line: #3a3152;
+  --text: #f2ede6;
+  --muted: #b3a9c4;
+  --accent: #ff9f43;
+  --accent-2: #e84a7f;
+  --platinum: #8fd6ff;
+  --gold: #ffd34d;
+  --silver: #cfd6dd;
+  --bronze: #d08a4e;
+  --danger: #ff6b6b;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: var(--accent); }
+a:visited { color: #f7b267; }
+
+.masthead {
+  background: linear-gradient(135deg, #2a1445 0%, #5c1a4d 45%, #8a2a3c 75%, #b4552d 100%);
+  padding: 2.5rem 1rem 2rem;
+}
+
+.masthead-inner { max-width: 960px; margin: 0 auto; }
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffd9a0;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+
+.lede { margin: 0 0 1.4rem; max-width: 62ch; color: #f7ead9; }
+
+.progress-wrap { max-width: 640px; }
+
+.progress-line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.progress-bar {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.25s ease;
+}
+
+.grade-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
+
+.chip {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.chip-platinum { color: var(--platinum); }
+.chip-gold { color: var(--gold); }
+.chip-silver { color: var(--silver); }
+.chip-bronze { color: var(--bronze); }
+
+main { max-width: 960px; margin: 0 auto; padding: 0 1rem 2rem; }
+
+h2 { font-size: 1.5rem; margin: 2rem 0 0.5rem; }
+
+.section-note { color: var(--muted); max-width: 72ch; }
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.stage-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+
+.stage-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+
+.stage-meta { margin: 0 0 0.5rem; font-weight: 700; color: var(--accent); }
+
+.stage-card p { margin: 0.4rem 0; }
+
+.stage-names { font-size: 0.85rem; color: var(--muted); }
+
+.missable-callout {
+  margin-top: 1rem;
+  border: 2px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  background: #2e1620;
+}
+
+.missable-callout h3 { margin: 0 0 0.4rem; color: #ffb3b3; }
+.missable-callout p { margin: 0.4rem 0; }
+.callout-sub { color: var(--muted); font-size: 0.9rem; }
+
+.controls {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: end;
+  margin-bottom: 0.7rem;
+}
+
+.control-row:last-child { margin-bottom: 0; }
+
+.controls label { font-size: 0.85rem; font-weight: 700; color: var(--muted); }
+
+.controls input[type="search"],
+.controls select {
+  display: block;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+
+.controls input[type="search"] { min-width: 220px; }
+
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.spacer { flex: 1; }
+
+button,
+.import-button {
+  font: inherit;
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:hover,
+.import-button:hover { border-color: var(--accent); }
+
+button.danger { color: var(--danger); }
+
+.import-button input { display: none; }
+
+.kind-buttons { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.kind-button { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
+
+.kind-button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #241a08;
+}
+
+.control-note { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.9rem; }
+
+.list { display: grid; gap: 0.8rem; margin-top: 1.2rem; }
+
+.trophy-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+}
+
+.trophy-card.earned { background: var(--card-earned); border-color: #3f6b4a; }
+
+.trophy-card.missable { border-left: 4px solid var(--danger); }
+
+.card-head { display: flex; gap: 0.8rem; align-items: flex-start; }
+
+.earn-box {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.2rem;
+  flex: none;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.card-titles { flex: 1; min-width: 0; }
+
+.card-titles h3 { margin: 0; font-size: 1.1rem; }
+
+.card-desc { margin: 0.15rem 0 0; color: var(--muted); }
+
+.card-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; max-width: 220px; }
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.badge.grade-platinum { color: var(--platinum); border-color: var(--platinum); }
+.badge.grade-gold { color: var(--gold); border-color: var(--gold); }
+.badge.grade-silver { color: var(--silver); border-color: var(--silver); }
+.badge.grade-bronze { color: var(--bronze); border-color: var(--bronze); }
+.badge.missable-badge { color: #ffb3b3; border-color: var(--danger); }
+.badge.hidden-badge { color: var(--muted); }
+
+.guide-toggle {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.guide-body { margin-top: 0.7rem; border-top: 1px solid var(--line); padding-top: 0.7rem; }
+
+.guide-body p { margin: 0.4rem 0; }
+
+.guide-steps { margin: 0.5rem 0; padding-left: 1.4rem; }
+.guide-steps li { margin: 0.2rem 0; }
+
+.source-line { font-size: 0.9rem; color: var(--muted); }
+
+.masked-note { margin: 0.7rem 0 0; color: var(--muted); font-style: italic; }
+
+.sources ul { padding-left: 1.2rem; }
+.sources li { margin: 0.3rem 0; }
+
+.offline-note { color: var(--muted); }
+
+.load-error { color: var(--danger); font-weight: 700; }
+
+.colophon {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: 1.8rem; }
+  .card-head { flex-wrap: wrap; }
+  .card-badges { max-width: none; justify-content: flex-start; }
+  .controls input[type="search"] { min-width: 0; width: 100%; }
+}
