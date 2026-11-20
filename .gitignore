@@ -1,2 +1,4 @@
+# Build output and dependencies
+# out/ holds the generated guide output; node_modules/ holds local packages.
 out/
 node_modules/
